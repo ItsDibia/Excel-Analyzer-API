@@ -13,7 +13,7 @@ app = FastAPI(title="Excel Analyzer API")
 # Configurar CORS para permitir solicitudes desde el frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000","https://excel-analyzer-xi.vercel.app/"],  # Origen del frontend
+    allow_origins=["http://localhost:3000","https://excel-analyzer-xi.vercel.app"],  # Origen del frontend
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
