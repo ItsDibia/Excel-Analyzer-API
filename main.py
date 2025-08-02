@@ -7,6 +7,8 @@ import plotly.graph_objects as go
 import json
 from typing import List, Dict, Any, Optional
 import io
+import os
+import uvicorn
 
 app = FastAPI(title="Excel Analyzer API")
 
@@ -227,5 +229,6 @@ def generate_charts(df: pd.DataFrame):
 
 
 if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+
+    port = int(os.environ.get("PORT", 8000))  # Render te da este valor dinámicamente
+    uvicorn.run("main:app", host="0.0.0.0", port=port)
